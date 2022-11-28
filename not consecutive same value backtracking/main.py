@@ -25,9 +25,9 @@ print(result)
 
 result = []
 depth = 0
-
 def searchTree(result):
     res = []
+    global depth
     for i in range (2):
         if ((isValid(result, i) == True) and (depth < 3)):
             depth = depth + 1
