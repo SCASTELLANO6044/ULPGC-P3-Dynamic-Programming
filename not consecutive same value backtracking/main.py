@@ -27,5 +27,5 @@ def isvalid(solution, val):
 
 
 result.append(searchtree(result))
-result = result [0]
+result = result[0]
 print(result)
