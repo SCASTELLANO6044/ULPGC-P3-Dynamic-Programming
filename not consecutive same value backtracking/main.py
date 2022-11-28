@@ -32,9 +32,14 @@ def searchTree(result):
         if ((isValid(result, i) == True) and (depth < 3)):
             depth = depth + 1
             res.append(i)
-            res.append(searchTree(res))
+            aux = searchTree(res)
+            if aux != None:
+                res.append(aux)
     depth = depth -1
-    return res
+    if (len(res) > 0):
+        return res
+    else:
+        return
 
 def isValid(result, val):
     if (len(result)==0 or result[len(result)-1] != val):
@@ -43,5 +48,6 @@ def isValid(result, val):
         return False
 
 result.append(searchTree(result))
+
 
 print(result)
