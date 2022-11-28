@@ -1,5 +1,9 @@
+"""
 result = []
 max_size = 3
+
+arrayL = []
+arrayR = []
 
 def treeSearch():
     comb = []
@@ -16,4 +20,28 @@ def isValid(array, val):
         return True
 
 treeSearch()
+print(result)
+"""
+
+result = []
+depth = 0
+
+def searchTree(result):
+    res = []
+    for i in range (2):
+        if ((isValid(result, i) == True) and (depth < 3)):
+            depth = depth + 1
+            res.append(i)
+            res.append(searchTree(res))
+    depth = depth -1
+    return res
+
+def isValid(result, val):
+    if (len(result)==0 or result[len(result)-1] != val):
+        return True
+    else:
+        return False
+
+result.append(searchTree(result))
+
 print(result)
