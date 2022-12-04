@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee9e31ec-cb7e-4af6-a183-ddc8b786df1d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Fibonacci tabulation/fibo-tabulation.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/knaspsack tabulation/knaspsack-tabulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
