@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ee9e31ec-cb7e-4af6-a183-ddc8b786df1d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/knaspsack tabulation/knaspsack-tabulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/knaspsack tabulation/knaspsack-tabulation.py" afterDir="false" />
-    </list>
+    <list default="true" id="ee9e31ec-cb7e-4af6-a183-ddc8b786df1d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
