@@ -17,10 +17,9 @@ public class JavaProject {
         items [3][0] = 5;
         items [3][1] = 6;
         
-        for (int i = 0; i < items.length; i++) {
-            for (int j = 0; j < items[0].length; j++) {
-                System.out.println(items[i][j]);
-            }
-        }
+        int maxWeight = 5;
+        
+        backpack backpack = new backpack(items, maxWeight);
+        backpack.getBestCombination();
     }
 }
