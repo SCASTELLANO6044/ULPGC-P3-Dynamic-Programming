@@ -31,4 +31,23 @@ Third_param = input("Por favor, introduzca alguna de las siguientes opciones:\n"
                     "check -> para contar el número de caminos por ambos métodos.\n"+
                     "Opción: ")
 
+if Third_param == 'check':
+    tab = False
+    mem = False
+    both = True
+elif Third_param == 'sm':
+    tab = False
+    mem = True
+    both = False
+elif Third_param == 'st':
+    tab = True
+    mem = False
+    both = False
+
+if isDirectory:
+    print("1")
+else:
+    print("2")
+
+
 # Keyboard inputs
