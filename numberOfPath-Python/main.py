@@ -54,7 +54,8 @@ elif Third_param == 'st':
 if isDirectory:
     print("1")
 else:
-    matrix = matrixMaker.create_matrix(second_param)
+    info = data.info()
+    matrix = matrixMaker.create_matrix(second_param, info)
     print(matrix)
 
     if both:
@@ -64,5 +65,5 @@ else:
         tab_matrix = copy.deepcopy(matrix)
     elif mem:
         mem_matrix = copy.deepcopy(matrix)
-        print(data.getCost())
+        print(info.get_cost())
 

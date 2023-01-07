@@ -21,17 +21,18 @@ class info:
     def get_time(self):
         return self.time
 
-    def set_rows(data):
-        rows = data
+    def set_rows(self,value):
+        self.rows = value
 
-    def setCols(input):
-        cols = input
+    def set_cols(self,value):
+        self.cols = value
 
-    def setCost(input):
-        cost = input
+    def set_cost(self,value):
+        self.cost = value
 
-    def setPath(input):
-        path = input
+    def set_path(self,value):
+        self.path = value
 
-    def setTime(input):
-        time = input
+    def set_time(self, value):
+        self.time = value
+
