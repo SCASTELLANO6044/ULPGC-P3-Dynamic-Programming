@@ -1,4 +1,4 @@
-import matrixMaker, copy, data, memoization, tabulation, os
+import matrixMaker, copy, data, memoization, tabulation, os, time
 
 tab = False
 mem = False
@@ -14,8 +14,7 @@ print("Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -s
       "    -st, --tabulation                           count number of paths in a matrix with given cost to reach\n" +
       "                                                    (0, 0) cell through Tabulation\n" +
       "    -check                                      check that the number of paths in a matrix with given cost\n" +
-      "                                                    is the same through Tabulation and Memoization\n" +
-      "    -t, --time                                  display execution time")
+      "                                                    is the same through Tabulation and Memoization\n")
 
 First_param = input("If you are going to use a file please enter f\n" +
                     "If you are going to use a directory please enter d\n" +
@@ -52,6 +51,8 @@ elif Third_param == 'st':
 
 
 def __search_paths_for_file(file_name):
+    t = time.process_time()
+
     print("Archivo: " + file_name)
     info = data.Info()
     matrix = matrixMaker.create_matrix(file_name, info)
@@ -74,6 +75,9 @@ def __search_paths_for_file(file_name):
         mem_matrix = copy.deepcopy(matrix)
         info_paths = memoization.find_number_of_paths_memoization(mem_matrix, info)
         print("Numero de caminos por memoization: " + str(info_paths.get_path()))
+
+    ftime = time.process_time() - t
+    print("Tiempo: " + str(ftime))
 
 
 if isDirectory:
