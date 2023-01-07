@@ -1,38 +1,37 @@
-rows = 0
-cols = 0
-cost = 0
-path = 0
-time = ""
+class info:
+    def __int__(self):
+        self.rows = 0
+        self.cols = 0
+        self.cost = 0
+        self.path = 0
+        self.time = ""
 
-def getRows():
-    return rows
+    def get_rows(self):
+        return self.rows
 
-def getCols():
-    return cols
+    def get_cols(self):
+        return self.cols
 
-def getCost():
-    return cost
+    def get_cost(self):
+        return self.cost
 
-def getPath():
-    return path
+    def get_path(self):
+        return self.path
 
-def getTime():
-    return time
+    def get_time(self):
+        return self.time
 
-def setRows(input):
-    rows = input
+    def set_rows(data):
+        rows = data
 
+    def setCols(input):
+        cols = input
 
-def setCols(input):
-    cols = input
+    def setCost(input):
+        cost = input
 
+    def setPath(input):
+        path = input
 
-def setCost(input):
-    cost = input
-
-
-def setPath(input):
-    path = input
-
-def setTime(input):
-    time = input
+    def setTime(input):
+        time = input
