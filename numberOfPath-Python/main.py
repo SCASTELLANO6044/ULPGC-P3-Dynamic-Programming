@@ -63,9 +63,8 @@ else:
         mem_matrix = copy.deepcopy(matrix)
     elif tab:
         tab_matrix = copy.deepcopy(matrix)
-        # info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
-        # print(info_paths)
-        tabulation.find_number_of_paths_tabulation(tab_matrix, info)
+        info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
+        print(info_paths.get_path())
 
     elif mem:
         mem_matrix = copy.deepcopy(matrix)
