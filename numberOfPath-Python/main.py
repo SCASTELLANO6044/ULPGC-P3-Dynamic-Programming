@@ -65,5 +65,6 @@ else:
         tab_matrix = copy.deepcopy(matrix)
     elif mem:
         mem_matrix = copy.deepcopy(matrix)
-        memoization.find_number_of_paths_memoization(matrix, info)
+        info_paths = memoization.find_number_of_paths_memoization(matrix, info)
+        print("Numero de caminos: "+ str(info_paths.get_path()))
 
