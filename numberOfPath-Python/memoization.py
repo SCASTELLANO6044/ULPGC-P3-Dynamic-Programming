@@ -1,9 +1,10 @@
-
 def find_number_of_paths_memoization(matrix, info):
-    map = {"": 0}
-    info.set_path(__count_paths(matrix, len(matrix)-1, len(matrix[0])-1, info.get_cost(), map))
+    dictionary = {}
+    info.set_path(__count_paths(matrix, len(matrix) - 1, len(matrix[0]) - 1, info.get_cost(), dictionary))
     return info
-def __count_paths(matrix, m, n, cost, map):
+
+
+def __count_paths(matrix, m, n, cost, dictionary):
     if int(cost) < 0:
         return 0
 
@@ -13,14 +14,16 @@ def __count_paths(matrix, m, n, cost, map):
         else:
             return 0
 
-    key = "("+str(m)+", "+str(n)+") - "+str(cost)
+    key = "(" + str(m) + ", " + str(n) + ") - " + str(cost)
 
-    if map.get(key) == None:
+    if dictionary.get(key) is None:
         if int(m) == 0:
-            map[key] = __count_paths(matrix, 0, int(n)-1, int(cost)-int(matrix[m][n]), map)
+            dictionary[key] = __count_paths(matrix, 0, int(n) - 1, int(cost) - int(matrix[m][n]), dictionary)
         elif int(n) == 0:
-            map[key] = __count_paths(matrix, int(m)-1, 0, int(cost)-int(matrix[m][n]), map)
+            dictionary[key] = __count_paths(matrix, int(m) - 1, 0, int(cost) - int(matrix[m][n]), dictionary)
         else:
-            map[key] = __count_paths(matrix, int(m)-1, n, int(cost) - int(matrix[m][n]), map) + __count_paths(matrix, m, int(n)-1, int(cost)-int(matrix[m][n]), map)
+            dictionary[key] = __count_paths(matrix, int(m) - 1, n, int(cost) - int(matrix[m][n]),
+                                            dictionary) + __count_paths(matrix, m, int(n) - 1,
+                                                                        int(cost) - int(matrix[m][n]), dictionary)
 
-    return map.get(key)
+    return dictionary.get(key)

@@ -1,4 +1,11 @@
-class info:
+class Info:
+    def __init__(self):
+        self.time = None
+        self.path = None
+        self.cost = None
+        self.cols = None
+        self.rows = None
+
     def __int__(self):
         self.rows = 0
         self.cols = 0
@@ -21,18 +28,17 @@ class info:
     def get_time(self):
         return self.time
 
-    def set_rows(self,value):
+    def set_rows(self, value):
         self.rows = value
 
-    def set_cols(self,value):
+    def set_cols(self, value):
         self.cols = value
 
-    def set_cost(self,value):
+    def set_cost(self, value):
         self.cost = value
 
-    def set_path(self,value):
+    def set_path(self, value):
         self.path = value
 
     def set_time(self, value):
         self.time = value
-

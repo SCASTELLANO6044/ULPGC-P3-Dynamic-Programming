@@ -1,4 +1,3 @@
-import data
 def create_matrix(file_name, info):
     with open(file_name, 'r') as file:
         lines = file.readlines()
@@ -9,9 +8,9 @@ def create_matrix(file_name, info):
     matrix_val = matrix[1:]
     return matrix_val
 
-def __format_matrix (lines):
+
+def __format_matrix(lines):
     result = []
     for x in lines:
         result.append(x.split())
     return result
-
