@@ -1,4 +1,4 @@
-import matrixMaker,copy,data,memoization,tabulation
+import matrixMaker,copy,data,memoization,tabulation, os
 
 tab = False
 mem = False
@@ -54,8 +54,6 @@ def __search_paths_for_file(file_name):
     info = data.info()
     matrix = matrixMaker.create_matrix(file_name, info)
 
-    print(matrix)
-
     if both:
         tab_matrix = copy.deepcopy(matrix)
         mem_matrix = copy.deepcopy(matrix)
@@ -76,6 +74,11 @@ def __search_paths_for_file(file_name):
         print("Numero de caminos por memoization: " + str(info_paths.get_path()))
 
 if isDirectory:
-    print("1")
+    files = []
+    for path in os.listdir(second_param):
+        if os.path.isfile(os.path.join(second_param, path)):
+            files.append(path)
+    for file in files:
+        __search_paths_for_file(second_param+file)
 else:
     __search_paths_for_file(second_param)
