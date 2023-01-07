@@ -1,6 +1,9 @@
 def find_number_of_paths_memoization(matrix, info):
     dictionary = {}
     info.set_path(__count_paths(matrix, len(matrix) - 1, len(matrix[0]) - 1, info.get_cost(), dictionary))
+    for i in dictionary:
+        if dictionary.get(i) != 0:
+            print(str(i) + str(dictionary.get(i)))
     return info
 
 
@@ -25,5 +28,4 @@ def __count_paths(matrix, m, n, cost, dictionary):
             dictionary[key] = __count_paths(matrix, int(m) - 1, n, int(cost) - int(matrix[m][n]),
                                             dictionary) + __count_paths(matrix, m, int(n) - 1,
                                                                         int(cost) - int(matrix[m][n]), dictionary)
-
     return dictionary.get(key)
