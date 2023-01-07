@@ -49,5 +49,3 @@ if isDirectory:
 else:
     print("2")
 
-
-# Keyboard inputs
