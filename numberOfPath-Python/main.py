@@ -1,4 +1,4 @@
-import matrixMaker,copy,data,memoization
+import matrixMaker,copy,data,memoization,tabulation
 
 
 tab = False
@@ -63,6 +63,10 @@ else:
         mem_matrix = copy.deepcopy(matrix)
     elif tab:
         tab_matrix = copy.deepcopy(matrix)
+        # info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
+        # print(info_paths)
+        tabulation.find_number_of_paths_tabulation(tab_matrix, info)
+
     elif mem:
         mem_matrix = copy.deepcopy(matrix)
         info_paths = memoization.find_number_of_paths_memoization(matrix, info)
