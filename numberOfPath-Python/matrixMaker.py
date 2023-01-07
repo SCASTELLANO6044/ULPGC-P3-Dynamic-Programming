@@ -9,5 +9,3 @@ def create_matrix(file_name):
     matrix_val = matrix[1:]
     return matrix_val
 
-# def deep_copy(matrix):
-#     print('hello')
