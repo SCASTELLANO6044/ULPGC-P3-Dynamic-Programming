@@ -68,12 +68,12 @@ def __search_paths_for_file(file_name):
     elif tab:
         tab_matrix = copy.deepcopy(matrix)
         info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
-        print(info_paths.get_path())
+        print("Número de caminos por tabulation: " + str(info_paths.get_path()))
 
     elif mem:
         mem_matrix = copy.deepcopy(matrix)
         info_paths = memoization.find_number_of_paths_memoization(mem_matrix, info)
-        print("Numero de caminos: " + str(info_paths.get_path()))
+        print("Numero de caminos por memoization: " + str(info_paths.get_path()))
 
 if isDirectory:
     print("1")
