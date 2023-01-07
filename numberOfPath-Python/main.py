@@ -1,3 +1,6 @@
+import matrixMaker
+
+
 tab = False
 mem = False
 both = False
@@ -18,6 +21,8 @@ print("Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -s
 First_param = input("If you are going to use a file please enter f\n"+
                      "If you are going to use a directory please enter d\n"+
                      "Opción: ")
+
+second_param = ""
 
 if First_param == "d":
     isDirectory = True
@@ -49,5 +54,4 @@ elif Third_param == 'st':
 if isDirectory:
     print("1")
 else:
-    print("2")
-
+    matrixMaker.create_matrix(second_param)

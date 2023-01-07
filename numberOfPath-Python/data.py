@@ -1,46 +1,38 @@
-class Data(object):
-    __rows = 0
-    __cols = 0
-    __cost = 0
-    __path = 0
-    __time = ""
+rows = 0
+cols = 0
+cost = 0
+path = 0
+time = ""
 
-    @staticmethod
-    def getRows():
-        return Data.__rows
+def getRows():
+    return rows
 
-    @staticmethod
-    def getCols():
-        return Data.__cols
+def getCols():
+    return cols
 
-    @staticmethod
-    def getCost():
-        return Data.__cost
+def getCost():
+    return cost
 
-    @staticmethod
-    def getPath():
-        return Data.__path
+def getPath():
+    return path
 
-    @staticmethod
-    def getTime():
-        return Data.__time
+def getTime():
+    return time
 
-    @staticmethod
-    def setRows(rows):
-        Data.__rows = rows
+def setRows(input):
+    rows = input
 
-    @staticmethod
-    def setCols(cols):
-        Data.__cols = cols
 
-    @staticmethod
-    def setCost(cost):
-        Data.__cost = cost
+def setCols(input):
+    cols = input
 
-    @staticmethod
-    def setPath(paths):
-        Data.__path = paths
 
-    @staticmethod
-    def setTime(time):
-        Data.__time = time
+def setCost(input):
+    cost = input
+
+
+def setPath(input):
+    path = input
+
+def setTime(input):
+    time = input
