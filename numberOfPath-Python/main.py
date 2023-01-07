@@ -51,6 +51,7 @@ elif Third_param == 'st':
     both = False
 
 def __search_paths_for_file(file_name):
+    print("Archivo: "+file_name)
     info = data.info()
     matrix = matrixMaker.create_matrix(file_name, info)
 
