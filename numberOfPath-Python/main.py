@@ -56,11 +56,18 @@ if isDirectory:
 else:
     info = data.info()
     matrix = matrixMaker.create_matrix(second_param, info)
+
     print(matrix)
 
     if both:
         tab_matrix = copy.deepcopy(matrix)
         mem_matrix = copy.deepcopy(matrix)
+
+        info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
+        print("Número de caminos por tabulation: " + str(info_paths.get_path()))
+
+        info_paths = memoization.find_number_of_paths_memoization(matrix, info)
+        print("Numero de caminos por memoization: " + str(info_paths.get_path()))
     elif tab:
         tab_matrix = copy.deepcopy(matrix)
         info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
