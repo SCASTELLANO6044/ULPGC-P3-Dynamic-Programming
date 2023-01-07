@@ -1,6 +1,5 @@
 import matrixMaker,copy,data,memoization,tabulation
 
-
 tab = False
 mem = False
 both = False
@@ -51,11 +50,9 @@ elif Third_param == 'st':
     mem = False
     both = False
 
-if isDirectory:
-    print("1")
-else:
+def __search_paths_for_file(file_name):
     info = data.info()
-    matrix = matrixMaker.create_matrix(second_param, info)
+    matrix = matrixMaker.create_matrix(file_name, info)
 
     print(matrix)
 
@@ -66,7 +63,7 @@ else:
         info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
         print("Número de caminos por tabulation: " + str(info_paths.get_path()))
 
-        info_paths = memoization.find_number_of_paths_memoization(matrix, info)
+        info_paths = memoization.find_number_of_paths_memoization(mem_matrix, info)
         print("Numero de caminos por memoization: " + str(info_paths.get_path()))
     elif tab:
         tab_matrix = copy.deepcopy(matrix)
@@ -75,6 +72,10 @@ else:
 
     elif mem:
         mem_matrix = copy.deepcopy(matrix)
-        info_paths = memoization.find_number_of_paths_memoization(matrix, info)
-        print("Numero de caminos: "+ str(info_paths.get_path()))
+        info_paths = memoization.find_number_of_paths_memoization(mem_matrix, info)
+        print("Numero de caminos: " + str(info_paths.get_path()))
 
+if isDirectory:
+    print("1")
+else:
+    __search_paths_for_file(second_param)
