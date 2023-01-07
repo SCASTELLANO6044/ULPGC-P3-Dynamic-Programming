@@ -15,16 +15,18 @@ print("Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -s
         "                                                    is the same through Tabulation and Memoization\n" +
         "    -t, --time                                  display execution time")
 
-First_param = input("If you are going to use a file please enter F\n"+
-                     "If you are going to use a directory please enter D\n"+
+First_param = input("If you are going to use a file please enter f\n"+
+                     "If you are going to use a directory please enter d\n"+
                      "Opción: ")
-if First_param == 'd' or 'D':
+
+if First_param == "d":
     isDirectory = True
     second_param = input("Por favor introduce la ruta al directorio:\n"+
                          "Ruta: ")
-elif First_param == 'f' or 'F':
+elif First_param == "f":
     second_param = input("Por favor introduce la ruta al archivo:\n" +
                          "Ruta: ")
+
 Third_param = input("Por favor, introduzca alguna de las siguientes opciones:\n"+
                     "sm -> para contar el número de caminos mediante memoization,\n"+
                     "st -> para contar el número de caminos mediante tabulation, o,\n"+
