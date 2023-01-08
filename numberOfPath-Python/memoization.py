@@ -1,9 +1,20 @@
 def find_number_of_paths_memoization(matrix, info):
     dictionary = {}
     info.set_path(__count_paths(matrix, len(matrix) - 1, len(matrix[0]) - 1, info.get_cost(), dictionary))
+    path = []
+    print("Los caminos tomados por el método de memoization son los correspondientes a las coordenadas que se " +
+          "muestran a continuación: ")
     for i in dictionary:
         if dictionary.get(i) != 0:
-            print(str(i) + str(dictionary.get(i)))
+            pointer = i.rfind(')')
+            i = i[:-pointer + 1]
+            i = i.rstrip()
+            if i not in path:
+                path.append(i)
+    print(path)
+    print("Teniendo siempre en cuenta que siempre avanzamos hacia la izquierda o hacia arriba descartando las " +
+          "posibilidades de ir a casillas anteriores")
+
     return info
 
 
