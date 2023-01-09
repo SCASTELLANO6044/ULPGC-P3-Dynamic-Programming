@@ -94,4 +94,4 @@ if isDirectory:
 else:
     __search_paths_for_file(second_param)
 
-input("Press any key to exit;")
+input("Press enter to exit;")
