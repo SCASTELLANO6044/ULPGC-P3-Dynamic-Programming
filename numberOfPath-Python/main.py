@@ -93,3 +93,5 @@ if isDirectory:
         __search_paths_for_file(second_param + file)
 else:
     __search_paths_for_file(second_param)
+
+input("Press any key to exit;")
