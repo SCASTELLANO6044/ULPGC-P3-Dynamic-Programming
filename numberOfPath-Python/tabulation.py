@@ -29,6 +29,7 @@ def find_number_of_paths_tabulation(matrix, info):
                     tab[i][j][k] = tab[i - 1][j][k - int(matrix[i][j])] + tab[i][j - 1][k - int(matrix[i][j])]
 
     info.set_path(tab[rows - 1][cols - 1][int(given_cost)])
+
     # for i in tab:
     #     for j in i:
     #         for k in j:
