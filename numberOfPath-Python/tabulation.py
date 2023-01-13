@@ -30,10 +30,4 @@ def find_number_of_paths_tabulation(matrix, info):
 
     info.set_path(tab[rows - 1][cols - 1][int(given_cost)])
 
-    # for i in tab:
-    #     for j in i:
-    #         for k in j:
-    #             print(k, end=" ")
-    #         print()
-
     return info

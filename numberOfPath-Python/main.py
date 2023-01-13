@@ -33,10 +33,6 @@ elif sys.argv[1] not in valid_first or sys.argv[3] not in valid_second:
           "    --check                                      check that the number of paths in a matrix with given cost\n" +
           "                                                    is the same through Tabulation and Memoization\n")
 else:
-    # First_param = input("If you are going to use a file please enter f\n" +
-    #                     "If you are going to use a directory please enter d\n" +
-    #                     "Opción: ")
-
     second_param = ""
 
     if sys.argv[1] == valid_first[0] or sys.argv[1] == valid_first[1]:
@@ -45,12 +41,6 @@ else:
         print(second_param)
     elif sys.argv[1] == valid_first[2] or sys.argv[1] == valid_first[3]:
         second_param = sys.argv[2]
-
-    # Third_param = input("Por favor, introduzca alguna de las siguientes opciones:\n" +
-    #                     "sm -> para contar el número de caminos mediante memoization,\n" +
-    #                     "st -> para contar el número de caminos mediante tabulation, o,\n" +
-    #                     "check -> para contar el número de caminos por ambos métodos.\n" +
-    #                     "Opción: ")
 
     if sys.argv[3] == valid_second[4]:
         tab = False
@@ -78,11 +68,10 @@ else:
             info_paths = tabulation.find_number_of_paths_tabulation(tab_matrix, info)
             print("Número de caminos por tabulation: " + str(info_paths.get_path()))
 
-            print("\n"+"*************************************************************************"+"\n")
+            print("\n" + "*************************************************************************" + "\n")
 
             info_paths = memoization.find_number_of_paths_memoization(mem_matrix, info)
             print("Numero de caminos por memoization: " + str(info_paths.get_path()))
-
 
         elif tab:
             tab_matrix = copy.deepcopy(matrix)
