@@ -168,7 +168,7 @@ valid_first = ["-d", "--directory", "-f", "--file", "-h", "--help"]
 valid_second = ["-sm", "--memoization", "-st", "--tabulation", "--check"]
 
 if sys.argv[1] == "-h" or sys.argv[1] == "--help":
-    print("Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check] [-t]\n\n" +
+    print("Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check]\n\n" +
           "optional arguments:\n" +
           "    -d [DIRECTORY], --directory [DIRECTORY]     process many files in a directory\n" +
           "    -f [FILE], --file [FILE]                    process a single file\n" +
@@ -181,7 +181,7 @@ if sys.argv[1] == "-h" or sys.argv[1] == "--help":
 
 elif sys.argv[1] not in valid_first or sys.argv[3] not in valid_second:
     print("No ha escrito los parámetros de entrada del programa correctamente:\n"
-          "Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check] [-t]\n\n" +
+          "Uso del programa: NumberOfPaths.py [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check]\n\n" +
           "optional arguments:\n" +
           "    -d [DIRECTORY], --directory [DIRECTORY]     process many files in a directory\n" +
           "    -f [FILE], --file [FILE]                    process a single file\n" +
