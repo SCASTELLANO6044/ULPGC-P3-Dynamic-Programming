@@ -55,7 +55,8 @@ def create_matrix(file_name, info):
     info.set_cols(matrix[0][1])
     info.set_cost(matrix[0][2])
     matrix_val = matrix[1:]
-    return matrix_val
+    casted_matrix = __cast_matrix(matrix_val)
+    return casted_matrix
 
 
 def __format_matrix(lines):
@@ -63,6 +64,13 @@ def __format_matrix(lines):
     for x in lines:
         result.append(x.split())
     return result
+
+def __cast_matrix(matrix):
+    result = [[0] * len(matrix)] * len(matrix[0])
+    for i in range(len(matrix)):
+        result[i] = [int(numeric_string) for numeric_string in matrix[i]]
+    return result
+
 
 # Memoization
 
@@ -74,7 +82,7 @@ def find_number_of_paths_memoization(matrix, info):
             return 0
 
         if m == 0 and n == 0:
-            if int(matrix[0][0]) - cost == 0:
+            if matrix[0][0] - cost == 0:
                 return 1
             else:
                 return 0
@@ -83,13 +91,13 @@ def find_number_of_paths_memoization(matrix, info):
 
         if dictionary.get(key) is None:
             if m == 0:
-                dictionary[key] = __count_paths(0, n - 1, cost - int(matrix[m][n]))
+                dictionary[key] = __count_paths(0, n - 1, cost - matrix[m][n])
             elif n == 0:
-                dictionary[key] = __count_paths(m - 1, 0, cost - int(matrix[m][n]))
+                dictionary[key] = __count_paths(m - 1, 0, cost - matrix[m][n])
             else:
-                dictionary[key] = __count_paths(m - 1, n, cost - int(matrix[m][n])) + __count_paths(
+                dictionary[key] = __count_paths(m - 1, n, cost - matrix[m][n]) + __count_paths(
                     m, n - 1,
-                       cost - int(matrix[m][n]))
+                       cost - matrix[m][n])
         return dictionary.get(key)
 
     info.set_path(__count_paths(len(matrix) - 1, len(matrix[0]) - 1, info.get_cost()))
@@ -121,28 +129,28 @@ def find_number_of_paths_tabulation(matrix, info):
 
     tabulation_table = [[[0 for i in range(given_cost + 1)] for j in range(cols)] for k in range(rows)]
 
-    if int(matrix[0][0]) > given_cost:
+    if matrix[0][0] > given_cost:
         info.set_path(0)
 
-    tabulation_table[0][0][int(matrix[0][0])] = 1
+    tabulation_table[0][0][matrix[0][0]] = 1
 
     current_cost = 0
     for i in range(rows):
-        current_cost += int(matrix[i][0])
+        current_cost += matrix[i][0]
         if current_cost <= given_cost:
             tabulation_table[i][0][current_cost] = 1
 
     current_cost = 0
     for i in range(cols):
-        current_cost += int(matrix[0][i])
+        current_cost += matrix[0][i]
         if current_cost <= given_cost:
             tabulation_table[0][i][current_cost] = 1
 
     for i in range(1, rows):
         for j in range(1, cols):
             for k in range(given_cost + 1):
-                if k - int(matrix[i][j]) >= 0:
-                    tabulation_table[i][j][k] = tabulation_table[i - 1][j][k - int(matrix[i][j])] + tabulation_table[i][j - 1][k - int(matrix[i][j])]
+                if k - matrix[i][j] >= 0:
+                    tabulation_table[i][j][k] = tabulation_table[i - 1][j][k - matrix[i][j]] + tabulation_table[i][j - 1][k - matrix[i][j]]
 
     info.set_path(tabulation_table[rows - 1][cols - 1][given_cost])
 
