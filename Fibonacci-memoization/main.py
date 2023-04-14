@@ -2,13 +2,12 @@
 def fib(n):
     mem = {}
 
-    def mem_fib(n):
-        key = n
+    def mem_fib(key):
         if key not in mem:
-            if n < 2:
-                res = n
+            if key < 2:
+                res = key
             else:
-                res = fib(n-1) + fib(n - 2)
+                res = fib(key - 1) + fib(key - 2)
             mem[key] = res
         return mem[key]
 
