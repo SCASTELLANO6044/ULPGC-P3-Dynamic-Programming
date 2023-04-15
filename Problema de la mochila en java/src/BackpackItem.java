@@ -1,10 +1,7 @@
-import lombok.Data;
-
-@Data
 public class BackpackItem {
-    private int weight;
-    private int benefit;
-    private int position;
+    private final int weight;
+    private final int benefit;
+    private final int position;
 
     public BackpackItem(int weight, int benefit, int position) {
         this.weight = weight;
@@ -16,24 +13,8 @@ public class BackpackItem {
         return weight;
     }
 
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
     public int getBenefit() {
         return benefit;
-    }
-
-    public void setBenefit(int benefit) {
-        this.benefit = benefit;
-    }
-
-    public int getPosition() {
-        return position;
-    }
-
-    public void setPosition(int position) {
-        this.position = position;
     }
 
     @Override
