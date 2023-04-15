@@ -62,7 +62,7 @@ public class Main {
         }
 
         List<List<Integer>> result = new ArrayList<>();
-        for (int i = 0; i < table[n].length; i++) {
+        for (int i = 1; i < table[n].length; i++) {
             result.add(getCombinations(table, coins, n, i));
         }
         return result;
