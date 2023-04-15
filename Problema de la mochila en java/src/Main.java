@@ -14,9 +14,11 @@ public class Main {
 
         Map<Index, Integer> memo = new HashMap<>();
 
-        Integer backpack = memoization(backpackItemList, capacity, memo);
 
-        System.out.println(backpack);
+        System.out.println("Memoization Result: "+ memoization(backpackItemList, capacity, memo));
+
+        System.out.println("Tabulation result: "+tabulation(backpackItemList, capacity));
+
     }
 
     private static Integer memoization(List<BackpackItem> backpackItemList, Integer capacity, Map<Index, Integer> memo){
@@ -62,5 +64,30 @@ public class Main {
                 return i == index.i && w == index.w;
             }
 
+    }
+
+    private static Integer tabulation (List<BackpackItem> backpackItemList, Integer capacity){
+        int[][] table  = new int[backpackItemList.size()+1] [capacity + 1];
+
+        Arrays.fill(table[0], 0);
+
+        for (int i = 0; i < table.length; i++){
+            table[i][0] = 0;
+        }
+
+        for (int i = 1; i < table.length; i++){
+            for (int w = 1; w < table[0].length; w++){
+                table[i][w] = 1;
+                if (backpackItemList.get(i-1).getWeight() <= w ){
+                   Integer notTaken = table[i-1][w];
+                   Integer taken = backpackItemList.get(i-1).getBenefit() + table[i-1][w - backpackItemList.get(i-1).getWeight()];
+                   table[i][w] = maximum(notTaken, taken);
+               }else {
+                   table[i][w] = table[i -1][w];
+               }
+            }
+        }
+
+        return table[table.length-1][table[0].length-1];
     }
 }
