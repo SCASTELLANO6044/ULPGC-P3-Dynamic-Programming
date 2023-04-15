@@ -46,26 +46,6 @@ public class Main {
         memo.put(index, result);
         return result;
     }
-
-    private static Integer maximum(Integer a, Integer b){
-        if (a > b){
-            return a;
-        }
-        return b;
-    }
-
-    private record Index(int i, int w) {
-
-        @Override
-            public boolean equals(Object o) {
-                if (this == o) return true;
-                if (o == null || getClass() != o.getClass()) return false;
-                Index index = (Index) o;
-                return i == index.i && w == index.w;
-            }
-
-    }
-
     private static Integer tabulation (List<BackpackItem> backpackItemList, Integer capacity){
         int[][] table  = new int[backpackItemList.size()+1] [capacity + 1];
 
@@ -89,5 +69,25 @@ public class Main {
         }
 
         return table[table.length-1][table[0].length-1];
+    }
+
+    private static Integer maximum(Integer a, Integer b){
+        if (a > b){
+            return a;
+        }
+        return b;
+    }
+
+    private record Index(int i, int w) {
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+            Index index = (Index) o;
+            return i == index.i && w == index.w;
+        }
+
+
     }
 }
