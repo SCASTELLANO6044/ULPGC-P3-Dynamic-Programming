@@ -22,6 +22,7 @@ public class Main {
     private static Integer memoization(List<BackpackItem> backpackItemList, Integer capacity, Map<Index, Integer> memo){
         Index index = new Index(backpackItemList.size(), capacity);
         if (memo.containsKey(index)){
+            System.out.println("Found in dictionary");
             return memo.get(index);
         }
         Integer result;
@@ -40,6 +41,7 @@ public class Main {
             Integer takenItem = memoization(backpackItemListCopy, capacity - itemEvaluated.getWeight(), memo) + itemEvaluated.getBenefit();
             result = maximum (notTakenItem, takenItem);
         }
+        memo.put(index, result);
         return result;
     }
 
