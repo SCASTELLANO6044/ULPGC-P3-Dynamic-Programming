@@ -6,13 +6,16 @@ import java.util.Map;
 public class Main {
     public static void main(String[] args) {
         Integer [] coins = {1, 2, 3};
-        Map<String, List<List<Integer>>> memory = new HashMap<>(); // Cambio de valor de retorno a lista de listas
+        Map<String, List<List<Integer>>> memory = new HashMap<>();
         List<List<Integer>> combinations = memoization(coins, coins.length-1, 4, memory);
         Integer numOfCombinations = combinations.size();
         System.out.println(numOfCombinations);
         for (List<Integer> combination : combinations) {
             System.out.println(combination);
         }
+
+        List<List<Integer>> tabulation = tabulation(coins, 4);
+        System.out.println(tabulation);
     }
 
     private static List<List<Integer>> memoization (Integer[] coins, Integer coinTypeNum, Integer sum, Map<String, List<List<Integer>>> memory){
@@ -22,8 +25,7 @@ public class Main {
             return combinations;
         }
         if (sum < 0 || coinTypeNum < 0){
-            List<List<Integer>> combinations = new ArrayList<>();
-            return combinations;
+            return new ArrayList<>();
         }
         String key = coinTypeNum + "->"+sum;
         if (!memory.containsKey(key)){
@@ -41,9 +43,8 @@ public class Main {
         return memory.get(key);
     }
 
-    private static Integer tabulation (Integer[] coins, Integer sum){
+    private static List<List<Integer>> tabulation(Integer[] coins, Integer sum) {
         int n = coins.length;
-
         int[][] table = new int[n + 1][sum + 1];
 
         for (int i = 0; i <= n; i++) {
@@ -54,13 +55,29 @@ public class Main {
             for (int j = 1; j <= sum; j++) {
                 if (coins[i - 1] > j) {
                     table[i][j] = table[i - 1][j];
-                }
-                else {
+                } else {
                     table[i][j] = table[i - 1][j] + table[i][j - coins[i - 1]];
                 }
             }
         }
 
-        return table[n][sum];
+        List<List<Integer>> result = new ArrayList<>();
+        for (int i = 0; i < table[n].length; i++) {
+            result.add(getCombinations(table, coins, n, i));
+        }
+        return result;
+    }
+
+    private static List<Integer> getCombinations(int[][] table, Integer[] coins, int i, int j) {
+        List<Integer> combinations = new ArrayList<>();
+        while (i > 0 && j >= 0) {
+            if (table[i - 1][j] == table[i][j]) {
+                i--;
+            } else {
+                combinations.add(coins[i - 1]);
+                j -= coins[i - 1];
+            }
+        }
+        return combinations;
     }
 }
