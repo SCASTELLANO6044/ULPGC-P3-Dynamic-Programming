@@ -68,6 +68,21 @@ public class Main {
             }
         }
 
+        int i = table.length-1;
+        int k = table[0].length-1;
+        List<Integer> selectedItems = new ArrayList<>();
+        while (i > 0 && k > 0){
+            if(table[i][k] != table[i-1][k]){
+                selectedItems.add(i);
+                i--;
+                k = k - table[i][k];
+            }else {
+                i--;
+            }
+        }
+
+        System.out.println("Elements taken in tabulation: " + selectedItems.toString());
+
         return table[table.length-1][table[0].length-1];
     }
 
