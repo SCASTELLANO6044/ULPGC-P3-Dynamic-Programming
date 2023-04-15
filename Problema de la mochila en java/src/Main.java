@@ -81,7 +81,7 @@ public class Main {
             }
         }
 
-        System.out.println("Elements taken in tabulation: " + selectedItems.toString());
+        System.out.println("Elements taken in tabulation: " + selectedItems);
 
         return table[table.length-1][table[0].length-1];
     }
