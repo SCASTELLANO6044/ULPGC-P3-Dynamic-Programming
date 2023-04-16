@@ -1,3 +1,5 @@
+import sys
+
 def memoization(coins, coinTypeNum, sum, memory):
     if sum == 0:
         combinations = [[]]
@@ -42,6 +44,17 @@ def getCombinations(table, coins, i, j):
             combinations.append(coins[i-1])
             j -= coins[i-1]
     return combinations
+
+if sys.argv[1] == "-h" or sys.argv[1] == "--help":
+    print("Uso del programa: CoinChangeProblem.py [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check]\n\n" +
+          "optional arguments:\n" +
+          "    -d [DIRECTORY], --directory [DIRECTORY]     process many files in a directory\n" +
+          "    -f [FILE], --file [FILE]                    process a single file\n" +
+          "    -sm, --memoization                          count number of combinations to reach the change with the available coins through Memoization\n" +
+          "    -st, --tabulation                           count number of combinations to reach the change with the available coins through Tabulation\n" +
+          "    --check                                     check that the count number of combinations to reach the change with the available coins\n" +
+          "                                                    is the same through Tabulation and Memoization\n")
+
 
 coins = [1, 2, 3]
 memory = {}
