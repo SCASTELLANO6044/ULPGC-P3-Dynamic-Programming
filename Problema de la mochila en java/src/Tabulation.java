@@ -7,12 +7,6 @@ public class Tabulation {
     public static Integer execute(List<BackpackItem> backpackItemList, Integer capacity){
         int[][] table  = new int[backpackItemList.size()+1] [capacity + 1];
 
-        Arrays.fill(table[0], 0);
-
-        for (int i = 0; i < table.length; i++){
-            table[i][0] = 0;
-        }
-
         for (int i = 1; i < table.length; i++){
             for (int w = 1; w < table[0].length; w++){
                 table[i][w] = 1;
@@ -26,6 +20,8 @@ public class Tabulation {
             }
         }
 
+        //TODO: TRATAR DE ADAPTARLO EN MEMOIZATION DE LA MISMA MANERA
+        //TODO: CORREGIR
         int i = table.length-1;
         int k = table[0].length-1;
         List<Integer> selectedItems = new ArrayList<>();

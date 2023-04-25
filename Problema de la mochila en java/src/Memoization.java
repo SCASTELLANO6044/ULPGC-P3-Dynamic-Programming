@@ -4,7 +4,7 @@ public class Memoization {
     public static Integer execute(List<BackpackItem> backpackItemList, Integer capacity, Map<Memoization.Index, Integer> memo){
         Memoization.Index index = new Index(backpackItemList.size(), capacity);
         if (memo.containsKey(index)){
-            System.out.println("Found in dictionary");
+            //System.out.println("Found in dictionary");
             return memo.get(index);
         }
         Integer result;
