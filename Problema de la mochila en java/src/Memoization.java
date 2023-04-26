@@ -1,26 +1,24 @@
 import java.util.*;
 
 public class Memoization {
-    public static Integer execute(List<BackpackItem> backpackItemList, Integer capacity, Map<Memoization.Index, Integer> memo){
-        Memoization.Index index = new Index(backpackItemList.size(), capacity);
+    public static Integer execute(List<BackpackItem> backpackItemList, Integer capacity, Integer positionIterator, Map<Memoization.Index, Integer> memo){
+        Memoization.Index index = new Index(positionIterator, capacity);
         if (memo.containsKey(index)){
-            //System.out.println("Found in dictionary");
             return memo.get(index);
         }
         Integer result;
-        if (backpackItemList.size() == 0){
+        int currentPositionToEvaluate = backpackItemList.size() - positionIterator;
+        if (positionIterator == 0){
             return 0;
         }
-        if (backpackItemList.get(0).getWeight() > capacity) {
-            List<BackpackItem> backpackItemListCopy = new ArrayList<>(backpackItemList);
-            backpackItemListCopy.remove(0);
-            result = execute(backpackItemListCopy ,capacity, memo);
+        if (backpackItemList.get(currentPositionToEvaluate).getWeight() > capacity) {
+            positionIterator --;
+            result = execute(backpackItemList ,capacity, positionIterator, memo);
         }else {
-            BackpackItem itemEvaluated = backpackItemList.get(0);
-            List<BackpackItem> backpackItemListCopy = new ArrayList<>(backpackItemList);
-            backpackItemListCopy.remove(0);
-            Integer notTakenItem = execute(backpackItemListCopy, capacity, memo);
-            Integer takenItem = execute(backpackItemListCopy, capacity - itemEvaluated.getWeight(), memo) + itemEvaluated.getBenefit();
+            BackpackItem itemEvaluated = backpackItemList.get(currentPositionToEvaluate);
+            positionIterator --;
+            Integer notTakenItem = execute(backpackItemList, capacity, positionIterator, memo);
+            Integer takenItem = execute(backpackItemList, capacity - itemEvaluated.getWeight(),positionIterator, memo) + itemEvaluated.getBenefit();
             result = maximum (notTakenItem, takenItem);
         }
         memo.put(index, result);

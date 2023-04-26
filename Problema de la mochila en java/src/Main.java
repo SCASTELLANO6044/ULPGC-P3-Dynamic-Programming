@@ -14,7 +14,7 @@ public class Main {
 
         Map<Memoization.Index, Integer> memo = new HashMap<>();
 
-        System.out.println("Memoization Result: " + Memoization.execute(backpackItemList, capacity, memo));
+        System.out.println("New Memoization Result: " + Memoization.execute(backpackItemList, capacity, backpackItemList.size(), memo));
 
         System.out.println("Tabulation result: " + Tabulation.execute(backpackItemList, capacity));
 
