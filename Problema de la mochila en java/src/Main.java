@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.logging.Logger;
 
 
 public class Main {
@@ -14,9 +15,9 @@ public class Main {
 
         Map<Memoization.Index, Integer> memo = new HashMap<>();
 
-        System.out.println("New Memoization Result: " + Memoization.execute(backpackItemList, capacity, backpackItemList.size(), memo));
+        Logger.getLogger("New Memoization Result: " + Memoization.execute(backpackItemList, capacity, backpackItemList.size(), memo));
 
-        System.out.println("Tabulation result: " + Tabulation.execute(backpackItemList, capacity));
+        Logger.getLogger("Tabulation result: " + Tabulation.execute(backpackItemList, capacity));
 
     }
 }
