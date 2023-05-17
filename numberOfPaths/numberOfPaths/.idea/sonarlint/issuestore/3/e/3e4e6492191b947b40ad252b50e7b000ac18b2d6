@@ -1,0 +1,27 @@
+
+e
+java:S1192P"PDefine a constant instead of duplicating this literal " paths found \t" 6 times.(©†B
+w
+java:S4165"aRemove this useless assignment; "tab" already holds the assigned value along all execution paths.(¶Ôê‡
+|
+java:S4165""aRemove this useless assignment; "mem" already holds the assigned value along all execution paths.(ƒœßÛüÿÿÿÿ
+x
+java:S4165#"bRemove this useless assignment; "both" already holds the assigned value along all execution paths.(¾ÕÏ•
+w
+java:S4165"aRemove this useless assignment; "tab" already holds the assigned value along all execution paths.(¶Ôê‡
+x
+java:S4165"bRemove this useless assignment; "both" already holds the assigned value along all execution paths.(¾ÕÏ•
+|
+java:S4165"aRemove this useless assignment; "mem" already holds the assigned value along all execution paths.(ƒœßÛüÿÿÿÿ
+m
+java:S3776	"RRefactor this method to reduce its Cognitive Complexity from 28 to the 15 allowed.(ÙØ¤Şıÿÿÿÿ
+M	java:S106P"9Replace this use of System.out or System.err by a logger.(©†B
+S	java:S106W"9Replace this use of System.out or System.err by a logger.(•ïƒ»ùÿÿÿÿ
+N	java:S106]"9Replace this use of System.out or System.err by a logger.(‡ªÔí
+N	java:S106d"9Replace this use of System.out or System.err by a logger.(¸È¦š
+S	java:S106v"9Replace this use of System.out or System.err by a logger.(äşÑàùÿÿÿÿ
+S	java:S106x"9Replace this use of System.out or System.err by a logger.(•ïƒ»ùÿÿÿÿ
+N	java:S106~"9Replace this use of System.out or System.err by a logger.(ÑåŠ—
+T	java:S106…"9Replace this use of System.out or System.err by a logger.(ÑÔöşÿÿÿÿ
+á
+java:S6541	"ÅA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 86 to 64, Complexity from 17 to 14, Nesting Level from 4 to 2, Number of Variables from 28 to 6.(ÙØ¤Şıÿÿÿÿ
