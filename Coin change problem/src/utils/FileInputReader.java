@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class FileInputReader {
+
+    public FileInputReader(){}
     public static Description read(String file){
 
         Description descripcion = null;
