@@ -12,12 +12,12 @@ public class Switches {
                 "    -h, --help                                  Show this help message and exit\n" +
                 "    -d [DIRECTORY], --directory [DIRECTORY]     Process many files in a directory\n" +
                 "    -f [FILE], --file [FILE]                    Process a single file\n" +
-                "    -sm, --memoization                          Find the minimum path sum in a triangle-shaped matrix\n" +
-                "                                                   through Memoization\n" +
+                "    -sm, --memoization                          Given an unlimited supply of coins of given denominations\\n\" +\n" +
+                "                \"                                find the total number of distinct ways to get the desired change through Memoization\n" +
                 "    -st, --tabulation                           Given an unlimited supply of coins of given denominations\n" +
                 "                                                  find the total number of distinct ways to get the desired change through Tabulation\n" +
                 "    -check                                      Given an unlimited supply of coins of given denominations\n" +
-                "                                                  find the total number of distinct ways to get the desired change through Memoization\n");
+                "                                                  find the total number of distinct ways to get the desired change through Memoization and Tabulation\n");
         System.exit(0);
     }
 
