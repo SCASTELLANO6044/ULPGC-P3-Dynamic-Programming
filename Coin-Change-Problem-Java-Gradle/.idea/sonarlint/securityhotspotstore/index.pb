@@ -5,10 +5,6 @@
 gradlew.bat,2\a\2a45a911a8f1836b0b6c5b758962572012d8f8c3
 X
 (gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 :
@@ -18,8 +14,6 @@ d
 4src/main/java/org/example/utils/FileInputReader.java,0\b\0bd66082545e5b02beac5e2617623c9035d27480
 U
 %src/main/java/org/example/input/1.txt,3\6\369a2de4cd2163f3d7ac5df277a053736d2a1589
-X
-(src/main/java/org/example/main/Main.java,1\3\1303c4f14d3b4450d6d969342bcd8bbcf41d0963
 `
 0src/main/java/org/example/utils/Description.java,7\1\7198f47e291d9abc601a2d1f7d497fc356a6bc8b
 <

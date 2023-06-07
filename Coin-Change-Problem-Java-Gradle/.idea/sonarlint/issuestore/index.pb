@@ -1,8 +1,4 @@
 
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
@@ -26,5 +22,3 @@ m
 =src/main/java/org/example/dynamicprogramming/Memoization.java,1\2\12c7e9c8b7ab344dd7cf4b089f8601a7c05b1345
 l
 <src/main/java/org/example/dynamicprogramming/Tabulation.java,2\4\24773f8669088ebdc23850ef84b15199b5f9b224
-X
-(src/main/java/org/example/main/Main.java,1\3\1303c4f14d3b4450d6d969342bcd8bbcf41d0963
