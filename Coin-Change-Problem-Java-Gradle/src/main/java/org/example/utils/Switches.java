@@ -7,17 +7,17 @@ public class Switches {
     }
 
     public static void help(){
-        System.out.println("usage: FMPSTSM.jar [-h] [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check] [-t]\n\n" +
+        System.out.println("usage: Coin-Change-Problem.jar [-h] [-d [DIRECTORY] | -f [FILE]] [-sm | -st | -check] [-t]\n\n" +
                 "optional arguments:\n" +
                 "    -h, --help                                  Show this help message and exit\n" +
                 "    -d [DIRECTORY], --directory [DIRECTORY]     Process many files in a directory\n" +
                 "    -f [FILE], --file [FILE]                    Process a single file\n" +
                 "    -sm, --memoization                          Find the minimum path sum in a triangle-shaped matrix\n" +
                 "                                                   through Memoization\n" +
-                "    -st, --tabulation                           Find the minimum path sum in a triangle-shaped matrix\n" +
-                "                                                   through Tabulation\n" +
-                "    -check                                      Check that the minimum path sum in a triangle-shaped matrix\n" +
-                "                                                   is the same through Tabulation and Memoization\n");
+                "    -st, --tabulation                           Given an unlimited supply of coins of given denominations\n" +
+                "                                                  find the total number of distinct ways to get the desired change through Tabulation\n" +
+                "    -check                                      Given an unlimited supply of coins of given denominations\n" +
+                "                                                  find the total number of distinct ways to get the desired change through Memoization\n");
         System.exit(0);
     }
 
