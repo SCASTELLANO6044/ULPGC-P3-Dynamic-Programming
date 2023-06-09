@@ -60,13 +60,13 @@ public class Main {
                     Map<String, Integer> memory = new HashMap<>();
                     int memoization = Memoization.execute(description.getCoinTypeArray(),
                             description.getCoinTypeArray().length - 1,description.getSum(), memory);
-                    System.out.println(file + ": Memoization: "+ memoization);
+                    System.out.println(file + ": Number of paths with memoization: "+ memoization);
                     long finalTime = System.currentTimeMillis() - startTime;
                     System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                     System.out.println("****************************************");
                     startTime = System.currentTimeMillis();
                     int tabulation = Tabulation.execute(description.getCoinTypeArray(), description.getSum());
-                    System.out.println(file + ": Tabulation: "+ tabulation);
+                    System.out.println(file + ": Number of paths with tabulation: "+ tabulation);
                     finalTime = System.currentTimeMillis() - startTime;
                     System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                     System.out.println("****************************************");
@@ -75,14 +75,14 @@ public class Main {
                     Map<String, Integer> memory = new HashMap<>();
                     int memoization = Memoization.execute(description.getCoinTypeArray(),
                             description.getCoinTypeArray().length - 1,description.getSum(), memory);
-                    System.out.println(file + ": Memoization: "+ memoization);
+                    System.out.println(file + ": Number of paths with memoization: "+ memoization);
                     long finalTime = System.currentTimeMillis() - startTime;
                     System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                     System.out.println("****************************************");
                 } else if (tab) {
                     long startTime = System.currentTimeMillis();
                     int tabulation = Tabulation.execute(description.getCoinTypeArray(), description.getSum());
-                    System.out.println(file + ": Tabulation: "+ tabulation);
+                    System.out.println(file + ": Number of paths with tabulation: "+ tabulation);
                     long finalTime = System.currentTimeMillis() - startTime;
                     System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                     System.out.println("****************************************");
@@ -95,13 +95,13 @@ public class Main {
                 Map<String, Integer> memory = new HashMap<>();
                 int memoization = Memoization.execute(description.getCoinTypeArray(),
                         description.getCoinTypeArray().length - 1,description.getSum(), memory);
-                System.out.println(path + ": Memoization: "+ memoization);
+                System.out.println(path + ": Number of paths with memoization: "+ memoization);
                 long finalTime = System.currentTimeMillis() - startTime;
                 System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                 System.out.println("****************************************");
                 startTime = System.currentTimeMillis();
                 int tabulation = Tabulation.execute(description.getCoinTypeArray(), description.getSum());
-                System.out.println(path + ": Tabulation: "+ tabulation);
+                System.out.println(path + ": Number of paths with tabulation: "+ tabulation);
                 finalTime = System.currentTimeMillis() - startTime;
                 System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                 System.out.println("****************************************");
@@ -110,14 +110,14 @@ public class Main {
                 Map<String, Integer> memory = new HashMap<>();
                 int memoization = Memoization.execute(description.getCoinTypeArray(),
                         description.getCoinTypeArray().length - 1,description.getSum(), memory);
-                System.out.println(path + ": Memoization: "+ memoization);
+                System.out.println(path + ": Number of paths with memoization: "+ memoization);
                 long finalTime = System.currentTimeMillis() - startTime;
                 System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                 System.out.println("****************************************");
             } else if (tab) {
                 long startTime = System.currentTimeMillis();
                 int tabulation = Tabulation.execute(description.getCoinTypeArray(), description.getSum());
-                System.out.println(path + ": Tabulation: "+ tabulation);
+                System.out.println(path + ": Number of paths with tabulation: "+ tabulation);
                 long finalTime = System.currentTimeMillis() - startTime;
                 System.out.println("Time: " + df.format(finalTime / 1000.0) + " s");
                 System.out.println("****************************************");
